@@ -10200,7 +10200,6 @@ Commented out to copy base weapon-->
 				Damage="1000"
 				DamageTaperOff="15"
 				Radius="250"
-				DelayTimeSeconds="2.1s"
 				DamageType="CANNON"
 				DeathType="DETONATED" >
 				<SpecialObjectFilter
@@ -10217,6 +10216,34 @@ Commented out to copy base weapon-->
 			<ReportWeaponFiredStatNugget/>
 		</Nuggets>
 	</WeaponTemplate>
+
+  <WeaponTemplate
+    id="VeinDetonationCreationWeapon"
+    Name="VeindDetionationCreationWeapon"
+    RadiusDamageAffects="SELF ALLIES ENEMIES NEUTRALS"
+    AttackRange="50000.0"
+    >
+    <Nuggets>
+      <DamageNugget
+				Damage="10"
+				DamageTaperOff="0"
+				Radius="5"
+				DamageType="CANNON"
+				DeathType="DETONATED" >
+        <SpecialObjectFilter
+					Rule="ALL"
+					Exclude="AIRCRAFT"/>
+        <DamageScalarDetails Scalar= "100%">
+          <Filter
+						Rule="NONE"
+						Include="TIBERIUM" />
+        </DamageScalarDetails>
+      </DamageNugget>
+      <WeaponOCLNugget
+				WeaponOCL="OCL_NODVeinDetonation" />
+      <ReportWeaponFiredStatNugget/>
+    </Nuggets>
+  </WeaponTemplate>
 
 	<WeaponTemplate
 		id="OrcaEchoCannon"
@@ -13490,7 +13517,6 @@ Commented out to copy base weapon-->
 			<DamageNugget
 				Damage="100"
 				Radius="100"
-				DelayTimeSeconds="3.5s"
 				DamageType="CANNON"
 				DeathType="DETONATED" >
 			</DamageNugget>
